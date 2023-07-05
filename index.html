@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ottonova Form</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header>
+      <div class="logo">
+        <img src="./img/ottonova-logo-seo.png" alt="Logo" />
+      </div>
+    </header>
+
+    <main>
+      <h1>Got questions or concerns? No worries!</h1>
+      <p>Drop us your details, and our team will get in touch with you soon.</p>
+
+      <form id="contactForm">
+        <p>Share us your Name, email, and phone:</p>
+        <div class="form-content">
+          <div class="first-row">
+            <div class="radio-wrapper">
+              <input
+                type="radio"
+                name="gender"
+                value="female"
+                id="femaleRadio"
+              />
+              <label for="femaleRadio"></label>
+
+              <input type="radio" name="gender" value="male" id="maleRadio" />
+              <label for="maleRadio"></label>
+            </div>
+
+            <div class="input-content">
+              <input
+                id="name"
+                type="text"
+                name="firstname"
+                placeholder="Otto"
+                required
+                onclick="changeLabelStyle(this)"
+                onblur="changeLabelStyle(this)"
+              />
+              <label for="name">First Name</label>
+              <div class="message name">Required</div>
+            </div>
+            <div class="input-content">
+              <input
+                id="lastname"
+                type="text"
+                name="lastname"
+                placeholder="Nova"
+                required
+                onclick="changeLabelStyle(this)"
+                onblur="changeLabelStyle(this)"
+              />
+              <label class="labelLastname" for="name">Last Name</label>
+              <div class="message lastname">Required</div>
+            </div>
+            
+          </div>
+
+          <div class="second-row">
+            <div class="input-content">
+              <input
+                id="email"
+                type="email"
+                name="email"
+                placeholder="youremail@mail.com"
+                pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}"
+                required
+                onclick="changeLabelStyle(this)"
+                onblur="changeLabelStyle(this)"
+              />
+              <label for="email">Email</label>
+              <div class="message email">Required</div>
+            </div>
+            <div class="input-content">
+              <input
+                id="phone"
+                type="tel"
+                name="phone"
+                placeholder="+49 15624712331"
+                pattern="(\+\d{1,3}\s?)?\d{10,12}"
+                required
+                onclick="changeLabelStyle(this)"
+                onblur="changeLabelStyle(this)"
+              />
+              <label class="labelPhone" for="phone">Mobile</label>
+              <div class="message phone">Required</div>
+            </div>
+          </div>
+          <div class="line"></div>
+          <div class="content-btn">
+            <p>By sending my data, I declare my consent to be contacted by ottonova.</p>
+            <button type="submit">Submit</button>
+          </div>
+        </div>
+      </form>
+      
+    </main>
+    <script src="script.js"></script>
+  </body>
+</html>

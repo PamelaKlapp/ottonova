@@ -1,0 +1,373 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Figtree",Avenir,Arial,sans-serif;
+}
+
+body{
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    background-color: #f2f3f6;
+    color: #00104b;
+}
+
+
+/* ---      Header Styles      --- */
+
+header{
+    height: 80px;
+    width: 100vw;
+    padding: 60px 200px ;
+    display: flex;
+}
+
+.logo img {
+    object-fit: contain;
+    width: 150px;
+    height: auto;
+    
+}
+
+/* ---      Main Style        --- */
+
+main{
+    padding: 30px 200px;
+    display: flex;
+    flex-direction: column;
+}
+main h1{
+    font-size: 32px;
+    line-height: 1.25;
+    padding-bottom: 15px;
+    font-weight: 700;
+}
+
+main>p{
+    font-size: 20px;
+    line-height: 28px;
+    font-weight: 300;
+    margin-bottom: 32px;
+}
+
+
+main form{
+    
+    background-color: #fff;;
+    padding: 30px;
+    border-radius: 8px;
+    width: 90%;
+    box-shadow: 0 1px 2px rgba(0,16,75,.2);;
+}
+
+/* ---       Form Style      --- */
+
+form{
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+form >p{
+    font-size: 20px;
+    font-weight: 700;
+    margin-bottom: 16px;
+}
+.form-content{
+    display: flex;
+    flex-direction: column;
+    gap: 0px;
+}
+
+.first-row{
+    display: grid;
+    grid-template-columns: 1fr 2fr 2fr;
+    gap: 20px;
+}
+.radio-wrapper{
+ height: 60px;
+}
+
+
+.second-row{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+    position: relative;
+    bottom: 10px;
+}
+
+/* INPUT RADIOS */
+
+
+/* Inputs Female */
+input[type="radio"]#femaleRadio {
+    display: none;
+}
+input[type="radio"]#femaleRadio + label {
+    position: absolute;
+    cursor: pointer;
+    display: inline-block;
+}
+
+input[type="radio"]#femaleRadio + label::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 80px; 
+    height: 53px; 
+    border: 1px solid #cdcfdb;
+    border-radius: 6px 0 0 6px;
+    background-color: transparent;
+}
+input[type="radio"]#femaleRadio:checked + label::before {
+    background-color: #0277ff; 
+    border: 1px solid #0277ff;
+
+}
+input[type="radio"]#femaleRadio + label::after {
+    content:  '';
+    position: absolute;
+    left: 30px; 
+    top: 6px;
+    width: 30px; 
+    height: 42px; 
+    background-image: url(./img/female.svg);
+    background-size: contain; 
+    background-repeat: no-repeat;
+    transition: all 0.08s linear;
+}
+
+input[type="radio"]#femaleRadio:checked + label::after {
+    width: 30px;
+    height: 42px; 
+    background-image: url(./img/femaleActive.svg); 
+}
+
+
+/*  Inputs Male  */
+
+input[type="radio"]#maleRadio {
+    display: none;
+}
+input[type="radio"]#maleRadio + label {
+    position: absolute;
+    cursor: pointer;
+    display: inline-block;
+}
+input[type="radio"]#maleRadio + label::before {
+    content: "";
+    position: absolute;
+    left: 81px;
+    top: 0;
+    width: 80px; 
+    height: 53px; 
+    border: 1px solid #cdcfdb; 
+    border-radius:0 6px 6px 0;
+    
+}
+input[type="radio"]#maleRadio:checked + label::before {
+    background-color: #0277ff; 
+    border: 1px solid #0277ff;
+            
+}
+input[type="radio"]#maleRadio + label::after {
+    content: "";
+    position: absolute;
+    left: 108px;
+    top: 6px;
+    width: 30px; 
+    height: 42px; 
+    background-image: url('./img/male.svg');
+    background-size: contain; 
+    background-repeat: no-repeat;
+    transition: all 0.08ms linear;
+    
+}
+
+input[type="radio"]#maleRadio:checked + label::after {
+    width: 30px; 
+    height: 42px;
+    background-image: url('./img//maleActive.svg');
+}
+
+
+
+/* INPUTS TEXT */
+
+input{
+    margin-bottom: 15px;
+    padding: 25px 16px 7px 16px;
+    border-radius: 6px;
+    outline: none;
+    font-size: 16px;
+    font-weight: 300;
+    border: 1px solid #cdcfdb; 
+}
+input.focus{
+    border: 1px solid #0277ff;
+}
+input.error{
+    border: 1px solid #ff5252;
+}
+
+.input-content{
+    display: flex;
+    flex-direction: column;
+}
+.input-content label{
+    font-size: 1rem;
+    color: #667093;
+    position: relative;
+    bottom: 53px;
+    left:16px;
+    transition: 0.2s ease;
+}
+label.focus{
+    font-size: 0.8rem;
+    color: #0277ff;
+    position: relative;
+    bottom:63px;
+}
+
+label.error{
+    font-size: 0.8rem;
+    color: #ff5252;
+}
+
+input::placeholder{
+    color: transparent;
+    font-size: 16px;
+}
+input:focus::placeholder{
+    color: #cdcfdb;
+}
+
+.message{
+    display: none;
+    font-size: 12px;
+    color: #ff5252;
+    font-weight: bold;
+    position: relative;
+    bottom: 33px;
+}
+
+.line{
+    height: 1px;
+    width: 100%;
+    background-color: #cdcfdb;
+    margin-bottom: 30px;
+    position: relative;
+    bottom: 15px;
+}
+
+.content-btn{
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    align-items: center;
+}
+.content-btn p{
+    font-size: smaller;
+    color: #667093;;
+}
+.content-btn button{
+    width: 300px;
+font-size: 16px;
+color: #fff;
+background-color: #0277ff;
+padding: 12px 24px;
+border: none;
+border-radius: 6px;
+font-weight: 700;
+transition:all 1s ease;
+}
+.content-btn button:hover{
+    background-color: #025fc9;
+    cursor: pointer;
+}
+
+
+
+
+
+/*     TABLET    */
+
+@media screen and (max-width: 1360px) {
+    header{
+        padding: 60px 100px ;
+    }
+    main{
+        padding: 30px 100px;
+    }
+    main form{
+        width: 95%; 
+    }
+    .first-row{
+        grid-template-columns: 1fr;
+        align-items: start;
+    }
+    .second-row{
+        grid-template-columns: 1fr;  
+    }
+    input{
+        margin-bottom: 0px;
+    }
+    .input-content label{
+        bottom: 40px;  
+    }
+    .input-content label.labelLastname{
+        bottom: 55px;  
+    }
+    input#lastname{
+        position: relative;
+        bottom: 15px;
+    }
+    input#phone{
+        position: relative;
+        bottom: 10px;
+    }
+    .input-content label.labelPhone{
+        bottom: 50px;
+    }
+    label.focus{
+        position: relative;
+        bottom:50px;
+    }
+    label.labelLastname.focus{
+        bottom: 65px;
+    }
+    label.labelPhone.focus{
+        bottom: 60px;
+    }
+    div.message.name{
+        bottom: 18px;
+    }
+    div.message.email{
+        bottom: 18px;
+    }
+    div.message.phone{
+        bottom: 28px;
+    }
+    
+    
+}
+
+
+
+/*    MOBILE     */
+@media screen and (max-width: 700px) {
+    header{
+        padding: 60px 50px ;
+    }
+    main{
+        padding: 30px 50px;
+    }
+    main form{
+        width: 100%;
+       
+    }
+   
+}
